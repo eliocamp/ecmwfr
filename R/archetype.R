@@ -23,7 +23,7 @@ wf_slash_vector <- function(vector) {
 # that evaluates them. It automatically detects the arguments the function
 # needs to take
 #
-archetype <- function(query, ...) {
+wf_archetype <- function(query, ...) {
   query_exp <- rlang::enexpr(query)
   extra_args <- match.call(expand.dots = FALSE)$`...`
   has_default <- names(extra_args) != ""
@@ -47,7 +47,7 @@ if (FALSE) {
 # Usage:
 #
 
-ERAI <- archetype(
+ERAI <- wf_archetype(
   list(class = "ei",
        dataset = "interim",
        expver = "1",
